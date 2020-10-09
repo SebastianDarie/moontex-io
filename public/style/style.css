@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #191a28;
+  height: 100vh;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 256px;
+  height: 256px;
+}
+
+.login-button {
+  display: flex;
+  justify-content: center;
+  /* margin-top: 20px; */
+  align-items: center;
+  height: 50vh;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+#forbidden {
+  padding: 1rem;
+  background: black;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  color: #54fe55;
+  text-shadow: 0px 0px 10px;
+  font-size: 6rem;
+  flex-direction: column;
+}
+
+.text {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.8rem;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  49% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.blink {
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
