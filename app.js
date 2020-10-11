@@ -2,7 +2,9 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 const session = require('express-session')
+const MongoStore = require('connect-mongo')(session)
 const passport = require('passport')
+const mongoose = require('mongoose')
 const path = require('path')
 const discordStrategy = require('./strategies/discordStrategy')
 const connectDB = require('./database/config')
@@ -19,9 +21,10 @@ app.use(
     cookie: {
       maxAge: 60000 * 60 * 24,
     },
-    resave: true,
+    resave: false,
     saveUninitialized: false,
     name: 'discord.oauth2',
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
   })
 )
 
